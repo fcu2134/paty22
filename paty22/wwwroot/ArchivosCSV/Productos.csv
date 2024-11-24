@@ -1,0 +1,21 @@
+Nombre,Descripcion,Precio,Stock,Categoria,Proveedor,Etiqueta,ImageUrl
+Aceite de Coco Organico,500 ml de aceite de coco organico,4300,15,Comestibles,Proveedor1,Organico,/img/aceite_coco.jpg
+Aceite de Oliva Extra Virgen,500 ml de aceite de oliva extra virgen,4500,10,Comestibles,Proveedor1,Gourmet,/img/aceite_oliva.jpg
+Agua Mineral Premium,500 ml de agua mineral con gas,1200,50,Bebestibles,Proveedor1,Premium,/img/agua_mineral.jpg
+Cafe Arabico Premium,250 gr de cafe en grano arabico premium,6000,12,Bebestibles,Proveedor1,Gourmet,/img/cafe_premium.jpg
+Caviar de Trucha,Frasco de 50 gr de caviar de trucha,10000,4,Comestibles,Proveedor1,Gourmet,/img/caviar_trucha.jpg
+Cerveza Artesanal IPA,330 ml de cerveza artesanal tipo IPA,3000,20,Alcohol,Proveedor1,Artesanal,/img/cerveza_ipa.jpg
+Champagne Brut,750 ml de champagne brut de alta gama,24000,3,Alcohol,Proveedor1,Premium,/img/champagne_brut.jpg
+Chocolate Belga,Barra de chocolate oscuro belga 70% cacao,3500,25,Comestibles,Proveedor1,Gourmet,/img/chocolate_belga.jpg
+Galletas Gourmet de Avena,Galletas gourmet de avena y nueces,1800,40,Comestibles,Proveedor1,Gourmet,/img/galletas_avena.jpg
+Jugo de Uva Natural,1 litro de jugo de uva organico sin azucar añadido,3500,30,Bebestibles,Proveedor1,Organico,/img/jugo_uva.jpg
+Miel de Ulmo,Frasco de 500 gr de miel pura de Ulmo,5000,18,Comestibles,Proveedor1,Organico,/img/miel_ulmo.jpg
+Pasta de Trufa,250 gr de pasta de trufa,4800,10,Comestibles,Proveedor1,Gourmet,/img/pasta_trufa.jpg
+Pisco Gran Reserva,700 ml de pisco chileno gran reserva,9500,6,Alcohol,Proveedor1,Premium,/img/pisco_gran_reserva.jpg
+Queso Brie,200 gr de queso Brie,5200,15,Comestibles,Proveedor1,Gourmet,/img/queso_brie.jpg
+Ron Premium,700 ml de ron premium añejado,8000,7,Alcohol,Proveedor1,Premium,/img/ron_premium.jpg
+Salmon Ahumado,100 gr de salmon ahumado,7200,12,Comestibles,Proveedor1,Gourmet,/img/salmon_ahumado.jpg
+Te de Frutas,Frasco con 20 bolsitas de te de frutas,2500,25,Bebestibles,Proveedor1,Organico,/img/te_frutas.jpg
+Te Verde Organico,Caja con 20 bolsas de te verde organico,3200,30,Bebestibles,Proveedor1,Organico,/img/te_verde.jpg
+Vino Cabernet Sauvignon,750 ml de vino tinto de la variedad Cabernet Sauvignon,8500,8,Alcohol,Proveedor1,Gourmet,/img/vino_cabernet.jpg
+Whisky Single Malt,700 ml de whisky escoces Single Malt,14000,5,Alcohol,Proveedor1,Premium,/img/whisky_single_malt.jpg

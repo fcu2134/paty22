@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Importar Productos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" enctype="multipart/form-data" asp-action="ImportCsv">
+    <div class="form-group">
+        <label for="file">Selecciona un archivo CSV</label>
+        <input type="file" class="form-control" id="file" name="file" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cargar</button>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

@@ -1,0 +1,15 @@
+﻿Categoría 'Comestibles' no válida para el producto Aceite de Coco Organico.
+Categoría 'Comestibles' no válida para el producto Aceite de Oliva Extra Virgen.
+Categoría 'Bebestibles' no válida para el producto Agua Mineral Premium.
+Categoría 'Bebestibles' no válida para el producto Cafe Arabico Premium.
+Categoría 'Comestibles' no válida para el producto Caviar de Trucha.
+Etiqueta 'Artesanal' no válida para el producto Cerveza Artesanal IPA.
+Categoría 'Comestibles' no válida para el producto Chocolate Belga.
+Categoría 'Comestibles' no válida para el producto Galletas Gourmet de Avena.
+Categoría 'Bebestibles' no válida para el producto Jugo de Uva Natural.
+Categoría 'Comestibles' no válida para el producto Miel de Ulmo.
+Categoría 'Comestibles' no válida para el producto Pasta de Trufa.
+Categoría 'Comestibles' no válida para el producto Queso Brie.
+Categoría 'Comestibles' no válida para el producto Salmon Ahumado.
+Categoría 'Bebestibles' no válida para el producto Te de Frutas.
+Categoría 'Bebestibles' no válida para el producto Te Verde Organico.

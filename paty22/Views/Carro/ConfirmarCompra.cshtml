@@ -1,0 +1,93 @@
+﻿@model paty22.Models.PedidoPagoViewModel
+
+@{
+    ViewData["Title"] = "Confirmar Pedido";
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+        <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+        </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+        <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+        </div>
+}
+
+<!-- Detalles del pedido -->
+<div>
+    <h3>Detalles de tu Pedido</h3>
+    @if (Model.PedidoProductos != null && Model.PedidoProductos.Any())
+    {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var pedidoProducto in Model.PedidoProductos)
+                {
+                            <tr>
+                                <td>@pedidoProducto.Producto.Nombre</td>
+                                <td>@pedidoProducto.Cantidad</td>
+                                <td>@pedidoProducto.Producto.Precio.ToString("C")</td>
+                                      <td>@(pedidoProducto.Cantidad * pedidoProducto.Producto.Precio)</td>
+                                
+                            </tr>
+                }
+                </tbody>
+            </table>
+    }
+    else
+    {
+            <p>No hay productos en el pedido.</p>
+    }
+
+    <h4>Total a Pagar: @ViewBag.Total.ToString("C")</h4>
+</div>
+
+<!-- Detalles de cliente -->
+<h3>Información de Contacto</h3>
+<form method="post" asp-action="ConfirmarCompra">
+    <div class="form-group">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre" required />
+    </div>
+    <div class="form-group">
+        <label for="Telefono">Teléfono:</label>
+        <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono" required />
+    </div>
+    <div class="form-group">
+        <label for="Direccion">Dirección:</label>
+        <input type="text" class="form-control" id="Direccion" name="Direccion" value="@Model.Direccion" required />
+    </div>
+
+    <!-- Formulario de pago -->
+    <label for="PagoMetodo">Método de Pago:</label>
+    @Html.DropDownListFor(
+                    model => model.Pago.MetodoPago,
+                    new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Tarjeta", Value = "Tarjeta" },
+                new SelectListItem { Text = "Efectivo", Value = "Efectivo" },
+                new SelectListItem { Text = "PayPal", Value = "PayPal" }
+            },
+                    "Seleccione un método de pago",
+                    new { @class = "form-control" }
+            )
+
+    <div class="form-group">
+        <label for="PagoMonto"> total:</label>
+        <input type="text" class="form-control" id="PagoMonto" name="Pago.Monto" value=" @ViewBag.Total.ToString("C")" disabled />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+</form>

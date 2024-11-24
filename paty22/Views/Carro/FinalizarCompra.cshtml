@@ -1,0 +1,52 @@
+﻿@model paty22.Models.PedidoPagoViewModel
+
+@{
+    Layout = "_Layout";  // Si usas un layout, asegúrate de tenerlo bien configurado
+}
+
+<div class="boleta-container" style="width: 500px; padding: 20px; border: 1px solid #ccc; font-family: Arial, sans-serif;">
+    <h2 style="text-align: center;">Boleta de Compra</h2>
+    <p><strong>Cliente:</strong> @Model.Nombre</p>
+    <p><strong>Teléfono:</strong> @Model.Telefono</p>
+    <p><strong>Dirección:</strong> @Model.Direccion</p>
+
+    <hr>
+
+    <h3>Productos Comprados:</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="text-align: left; padding: 5px; border-bottom: 1px solid #ccc;">Producto</th>
+                <th style="text-align: left; padding: 5px; border-bottom: 1px solid #ccc;">Cantidad</th>
+                <th style="text-align: left; padding: 5px; border-bottom: 1px solid #ccc;">Precio</th>
+                <th style="text-align: left; padding: 5px; border-bottom: 1px solid #ccc;">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PedidoProductos)
+            {
+                <tr>
+                    <td style="padding: 5px; border-bottom: 1px solid #eee;">@item.Producto.Nombre</td>
+                    <td style="padding: 5px; border-bottom: 1px solid #eee;">@item.Cantidad</td>
+                    <td style="padding: 5px; border-bottom: 1px solid #eee;">@String.Format("{0:C}", item.Producto.Precio)</td>
+                    <td style="padding: 5px; border-bottom: 1px solid #eee;">@String.Format("{0:C}", item.Cantidad * item.Producto.Precio)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Total a Pagar:</h3>
+    <p><strong>Total:</strong> @String.Format("{0:C}", Model.Total)</p>
+
+    <p><strong>Estado de Pago:</strong> @Model.Pago.EstadoPago</p>
+    <p><strong>Fecha de Pago:</strong> @Model.Pago.FechaPago.ToString("dd/MM/yyyy HH:mm")</p>
+
+    <hr>
+
+    <footer style="text-align: center; padding-top: 20px;">
+        <p>¡Gracias por tu compra!</p>
+    </footer>
+</div>
+

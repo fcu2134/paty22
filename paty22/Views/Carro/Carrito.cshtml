@@ -1,0 +1,80 @@
+﻿@model List<paty22.Models.Carro> 
+@{
+    ViewData["Title"] = "Carrito de Compras";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Producto.Nombre</td>
+                    <td>@item.Producto.Precio.ToString("C")</td>
+                    <td>
+                        <form method="post" action="@Url.Action("ModificarCantidad", "Carro")">
+                            <input type="hidden" name="productoId" value="@item.ProductoId" />
+                            <input type="number" name="cantidad" value="@item.Cantidad" min="1" class="form-control" style="width: 70px;" />
+                            <button type="submit" class="btn btn-primary btn-sm">Modificar</button>
+                        </form>
+                    </td>
+                                  <td>@((item.Producto.Precio * item.Cantidad).ToString("N0"))</td>
+
+
+                    <td>
+                        <form method="post" action="@Url.Action("EliminarDelCarrito", "Carro")">
+                            <input type="hidden" name="carroId" value="@item.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+      <td>Total de productos: @ViewBag.Total.ToString("C")</td>
+
+        
+
+
+
+    </div>
+}
+else
+{
+    <p>No tienes productos en el carrito.</p>
+}
+
+<!-- Enlaces para volver al listado de productos o a la confirmación de compra -->
+<div>
+    <a href="@Url.Action("Index", "Productos")" class="btn btn-secondary">Seguir comprando</a>
+    <a href="@Url.Action("ConfirmarCompra", "Carro")" class="btn btn-warning">Confirmar compra</a>
+</div>
